@@ -50,6 +50,14 @@ fun TampilData(
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
-        )
-            }
+        ) {
+            Spacer(modifier = Modifier.height(20.dp))
+            Column(
+                modifier = Modifier
+                    .width(250.dp)
+                    .padding(top = 10.dp),
+                horizontalAlignment = Alignment.Start
+            )
         }
+    }
+}
