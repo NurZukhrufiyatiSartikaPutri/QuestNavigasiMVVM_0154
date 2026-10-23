@@ -66,9 +66,15 @@ fun TampilData(
                     text = if (nama.isNotBlank()) nama else "Contoh Nama",
                     modifier = Modifier.padding(top = 4.dp)
                 )
+                HorizontalDivider(
+                    modifier = Modifier
+                        .padding(top = 10.dp, bottom = 20.dp)
+                        .fillMaxWidth(),
+                    color = Color.Cyan,
+                    thickness = 1.dp
+                )
 
             }
         }
     }
 }
-
