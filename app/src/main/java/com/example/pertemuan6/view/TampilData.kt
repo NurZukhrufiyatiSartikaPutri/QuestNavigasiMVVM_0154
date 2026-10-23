@@ -57,7 +57,18 @@ fun TampilData(
                     .width(250.dp)
                     .padding(top = 10.dp),
                 horizontalAlignment = Alignment.Start
-            )
+            ) {
+                Text(
+                    text = stringResource(id = R.string.nama_lengkap),
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = if (nama.isNotBlank()) nama else "Contoh Nama",
+                    modifier = Modifier.padding(top = 4.dp)
+                )
+
+            }
         }
     }
 }
+
