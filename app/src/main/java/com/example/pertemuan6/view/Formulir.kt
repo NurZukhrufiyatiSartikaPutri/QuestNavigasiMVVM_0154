@@ -35,7 +35,7 @@ import com.example.pertemuan6.R
 @Composable
 fun FormIsian(
     jenisJK: List<String> = listOf("Laki-Laki", "Perempuan"),
-    OnSubmitBtnClick: () -> Unit
+    OnSubmitBtnClick: (String, String, String) -> Unit
 ) {
     var textNama by remember { mutableStateOf("") }
     var textJK by remember { mutableStateOf("") }
@@ -57,7 +57,6 @@ fun FormIsian(
             )
         }
     ) { isiRuang ->
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -65,7 +64,6 @@ fun FormIsian(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
             OutlinedTextField(
                 value = textNama,
                 singleLine = true,
@@ -116,8 +114,7 @@ fun FormIsian(
             OutlinedTextField(
                 value = textAlamat,
                 singleLine = true,
-                modifier = Modifier
-                    .width(250.dp),
+                modifier = Modifier.width(250.dp),
                 label = {
                     Text(text = "Alamat")
                 },
@@ -132,9 +129,15 @@ fun FormIsian(
 
             Button(
                 modifier = Modifier
-                    .fillMaxWidth(fraction = 1f)
+                    .fillMaxWidth()
                     .padding(all = 25.dp),
-                onClick = OnSubmitBtnClick
+                onClick = {
+                    OnSubmitBtnClick(
+                        textNama,
+                        textJK,
+                        textAlamat
+                    )
+                }
             ) {
                 Text(
                     stringResource(id = R.string.submit)
@@ -143,4 +146,3 @@ fun FormIsian(
         }
     }
 }
-
