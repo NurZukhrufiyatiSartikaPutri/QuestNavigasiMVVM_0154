@@ -20,6 +20,11 @@ Tombol **Submit** disediakan untuk melanjutkan proses navigasi ke halaman detail
 
 <img width="197" height="428" alt="Screenshot 2026-10-23 165009" src="https://github.com/user-attachments/assets/54617431-2bee-46a6-b3a2-ce8f45ba6aca" />
 
+Halaman Tampilan Data setelah pengguna menekan tombol Submit
+
+
+<img width="200" height="428" alt="Screenshot 2026-10-23 193408" src="https://github.com/user-attachments/assets/f72b3371-4ab2-459c-95c0-f97276818be2" />
+
 
 *Keterangan: Tampilan akhir halaman Form Isian pada emulator Android.*
 
