@@ -40,4 +40,28 @@ fun FormIsian(
     var textNama by remember { mutableStateOf("") }
     var textJK by remember { mutableStateOf("") }
     var textAlamat by remember { mutableStateOf("") }
-}
+
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = stringResource(id = R.string.home),
+                        color = Color.White
+                    )
+                },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(
+                    containerColor = colorResource(id = R.color.teal_700)
+                )
+            )
+        }
+    ) { isiRuang ->
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(isiRuang),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) 
