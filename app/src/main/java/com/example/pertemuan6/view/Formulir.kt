@@ -88,6 +88,23 @@ fun FormIsian(
                 color = Color.Red
             )
 
+            Row {
+                jenisJK.forEach { item ->
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = textJK == item,
+                            onClick = {
+                                textJK = item
+                            }
+                        )
+
+                        Text(text = item)
+                    }
+                }
+            }
+
         }
     }
 }
