@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -20,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.pertemuan6.R
@@ -37,7 +39,12 @@ fun TampilData(
         modifier = modifier,
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(id = R.string.tampil), color = Color.White) },
+                title = {
+                    Text(
+                        text = stringResource(id = R.string.tampil),
+                        color = Color.White
+                    )
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = colorResource(id = R.color.teal_700)
                 )
@@ -52,20 +59,28 @@ fun TampilData(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(modifier = Modifier.height(20.dp))
+
             Column(
                 modifier = Modifier
                     .width(250.dp)
                     .padding(top = 10.dp),
                 horizontalAlignment = Alignment.Start
             ) {
+                // Label nama lengkap
                 Text(
                     text = stringResource(id = R.string.nama_lengkap),
                     fontWeight = FontWeight.Bold
                 )
+
+                // Isi nama dengan font cursive
                 Text(
                     text = if (nama.isNotBlank()) nama else "Contoh Nama",
-                    modifier = Modifier.padding(top = 4.dp)
+                    modifier = Modifier.padding(top = 4.dp),
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        fontFamily = FontFamily.Cursive
+                    )
                 )
+
                 HorizontalDivider(
                     modifier = Modifier
                         .padding(top = 10.dp, bottom = 20.dp)
@@ -74,14 +89,21 @@ fun TampilData(
                     thickness = 1.dp
                 )
 
+                // Label jenis kelamin
                 Text(
                     text = stringResource(id = R.string.jenis_kelamin),
                     fontWeight = FontWeight.Bold
                 )
+
+                // Isi jenis kelamin dengan font cursive
                 Text(
                     text = if (jenisK.isNotBlank()) jenisK else "Lainnya",
-                    modifier = Modifier.padding(top = 4.dp)
+                    modifier = Modifier.padding(top = 4.dp),
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        fontFamily = FontFamily.Cursive
+                    )
                 )
+
                 HorizontalDivider(
                     modifier = Modifier
                         .padding(top = 10.dp, bottom = 20.dp)
@@ -90,14 +112,21 @@ fun TampilData(
                     thickness = 1.dp
                 )
 
+                // Label alamat
                 Text(
                     text = stringResource(id = R.string.alamat),
                     fontWeight = FontWeight.Bold
                 )
+
+                // Isi alamat dengan font cursive
                 Text(
                     text = if (alamat.isNotBlank()) alamat else "Yogyakarta",
-                    modifier = Modifier.padding(top = 4.dp)
+                    modifier = Modifier.padding(top = 4.dp),
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        fontFamily = FontFamily.Cursive
+                    )
                 )
+
                 HorizontalDivider(
                     modifier = Modifier
                         .padding(top = 10.dp, bottom = 20.dp)
@@ -108,9 +137,10 @@ fun TampilData(
             }
 
             Spacer(modifier = Modifier.height(30.dp))
+
             Button(
                 modifier = Modifier
-                    .fillMaxWidth(fraction = 1f)
+                    .fillMaxWidth()
                     .padding(all = 25.dp),
                 onClick = onBackBtnClick
             ) {
