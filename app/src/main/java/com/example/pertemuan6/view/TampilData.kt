@@ -74,6 +74,14 @@ fun TampilData(
                     thickness = 1.dp
                 )
 
+                Text(
+                    text = stringResource(id = R.string.jenis_kelamin),
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = if (jenisK.isNotBlank()) jenisK else "Lainnya",
+                    modifier = Modifier.padding(top = 4.dp)
+                )
             }
         }
     }
